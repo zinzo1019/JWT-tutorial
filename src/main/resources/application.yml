@@ -2,7 +2,7 @@
 
     h2:
       console:
-      enabled: true
+        enabled: true
 
     datasource:
       url: jdbc:h2:mem:testdb
@@ -21,6 +21,14 @@
             format_sql: true
             show_sql: true
 
-logging:
-  level:
-    me.silvernine: DEBUG
+#logging:
+#  level:
+#    # main/java/com/example/jwttutorial에서 따옴
+#    com.example: DEBUG
+
+jwt:
+  header: Authorization
+  # HS512 알고리즘 사용 시 Secret Key는 64Byte 이상 필수 (특정 문자열을 Base64로 인코딩)
+  secret: 3eec0160d7d5278b2b24300d0cf3737dafbaeb6a52d2f7349804f732f1e4ee58c19c265dead3d05e7b1176af2e13e3ccf6f6e5a53e547e541ed57cc7e096bd43
+  # 토큰 만료 시간 (초 단위)
+  token-validity-in-seconds: 86400
