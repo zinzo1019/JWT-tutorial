@@ -1,0 +1,26 @@
+  spring:
+
+    h2:
+      console:
+      enabled: true
+
+    datasource:
+      url: jdbc:h2:mem:testdb
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+
+    jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+      hibernate:
+       # SessionFactory가 시작될 때 Drop. Create. Alter를 하고, 종료될 때 Drop (일회성 DB)
+        ddl-auto: create-drop
+        properties:
+          # 콘솔창에서 sql문을 이쁘게 볼 수 있도록
+          hibernate:
+            format_sql: true
+            show_sql: true
+
+logging:
+  level:
+    me.silvernine: DEBUG
